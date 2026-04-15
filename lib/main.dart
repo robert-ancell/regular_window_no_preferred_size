@@ -7,6 +7,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  // Fails on Windows if preferredSize is not set, e.g.
+  // preferredSize: const Size(400, 300)
+  //
+  // Error is:
+  // [FATAL:flutter/shell/platform/windows/host_window_regular.cc(19)] Check failed: preferred_size.has_preferred_view_size.
   final RegularWindowController controller = RegularWindowController();
 
   MyApp({super.key});
